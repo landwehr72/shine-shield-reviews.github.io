@@ -1,0 +1,112 @@
+---
+layout: default
+---
+
+<article class="post">
+    <header class="post-header">
+        <h1>{{ page.title }}</h1>
+        <div class="post-meta">
+            <span>{{ page.date | date: "%B %d, %Y" }}</span>
+            <span>•</span>
+            <span>{{ page.category }}</span>
+            {% if page.reading_time %}
+                <span>•</span>
+                <span>{{ page.reading_time }} min read</span>
+            {% endif %}
+        </div>
+    </header>
+
+    <div class="post-content">
+        {{ content }}
+    </div>
+
+    <footer class="post-footer">
+        <div class="post-tags">
+            {% if page.tags %}
+                <h4>Tags:</h4>
+                {% for tag in page.tags %}
+                    <span class="tag">{{ tag }}</span>
+                {% endfor %}
+            {% endif %}
+        </div>
+        
+        <div class="post-navigation">
+            {% if page.previous %}
+                <a href="{{ page.previous.url }}" class="prev-post">← {{ page.previous.title }}</a>
+            {% endif %}
+            {% if page.next %}
+                <a href="{{ page.next.url }}" class="next-post">{{ page.next.title }} →</a>
+            {% endif %}
+        </div>
+    </footer>
+</article>
+
+<style>
+.post-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.post-meta {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.post-content {
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.post-content h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+}
+
+.post-content h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #333;
+}
+
+.post-footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e1e1e1;
+}
+
+.post-tags {
+    margin-bottom: 2rem;
+}
+
+.tag {
+    background: #f8f9fa;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+    border: 1px solid #e1e1e1;
+}
+
+.post-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.prev-post, .next-post {
+    color: #666;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.prev-post:hover, .next-post:hover {
+    background: #f8f9fa;
+    color: #1a1a1a;
+}
+</style>
