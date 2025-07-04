@@ -4,63 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
-    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="keywords" content="{% if page.keywords %}{{ page.keywords | join: ', ' }}{% endif %}">
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     <link rel="canonical" href="{{ page.url | absolute_url }}">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ page.url | absolute_url }}">
-    <meta property="og:title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}">
-    <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ page.url | absolute_url }}">
-    <meta property="twitter:title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}">
-    <meta property="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-    <meta name="keywords" content="{% if page.keywords %}{{ page.keywords | join: ', ' }}{% endif %}">
-    <link rel="canonical" href="{{ page.url | absolute_url }}">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-    <meta property="og:url" content="{{ page.url | absolute_url }}">
-    <meta property="og:type" content="article">
-
-<!-- Schema Markup for Reviews -->
-{% if page.layout == 'review' %}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Review",
-  "itemReviewed": {
-    "@type": "Product",
-    "name": "{{ page.title }}"
-  },
-  "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": "{{ page.rating }}",
-    "bestRating": "5"
-  },
-  "author": {
-    "@type": "Person",
-    "name": "{{ site.title }}"
-  }
-}
-</script>
-{% endif %}
+    <!-- Schema Markup for Reviews -->
+    {% if page.layout == 'review' %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Review",
+      "itemReviewed": {
+        "@type": "Product",
+        "name": "{{ page.title }}"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "{{ page.rating }}",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "{{ site.title }}"
+      }
+    }
+    </script>
+    {% endif %}
 </head>
 <body>
     <header>
         <div class="header-content">
             <a href="{{ '/' | relative_url }}" class="logo">{{ site.title }}</a>
-              <span class="logo-icon">⚓</span>
-              <span class="logo-text">{{ site.title }}</span>
-            </a>
             <nav>
                 <ul>
                     {% for nav_item in site.navigation %}
@@ -76,30 +63,30 @@
     </main>
 
     <footer>
-    <div class="footer-content">
-        <div class="footer-section">
-            <h4>Shine & Shield Reviews</h4>
-            <p>Professional boat and auto detailing product reviews you can trust.</p>
-        </div>
-        <div class="footer-section">
-            <h4>Categories</h4>
-            <ul>
-                <li><a href="/boat-reviews/">Boat Reviews</a></li>
-                <li><a href="/auto-reviews/">Auto Reviews</a></li>
-                <li><a href="/guides/">Buying Guides</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h4>Follow Us</h4>
-            <div class="social-links">
-                <a href="#" class="social-link">YouTube</a>
-                <a href="#" class="social-link">Instagram</a>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>{{ site.title }}</h4>
+                <p>Honest boat and auto detailing product reviews from Florida's coast.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="/marine-products/">Marine Products</a></li>
+                    <li><a href="/auto-products/">Auto Products</a></li>
+                    <li><a href="/comparisons/">Comparisons</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" class="social-link">YouTube</a>
+                    <a href="#" class="social-link">Instagram</a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
-    </div>
-</footer>
+        <div class="footer-bottom">
+            <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
