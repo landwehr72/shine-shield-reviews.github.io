@@ -419,3 +419,35 @@ header {
 .header-content * {
   text-align: left;
 }
+/* Fix hero title centering */
+.hero {
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.hero h1 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Override any main container padding for hero section */
+main {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.hero {
+  margin-left: -2rem;
+  margin-right: -2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
