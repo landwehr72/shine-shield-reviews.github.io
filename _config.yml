@@ -25,14 +25,12 @@ plugins:
 navigation:
   - title: Home
     url: /
-  - title: Boat Reviews
-    url: /boat-reviews/
-  - title: Auto Reviews  
-    url: /auto-reviews/
-  - title: Best Products
-    url: /best-products/
-  - title: Buying Guides
-    url: /guides/
+  - title: Marine Products
+    url: /marine-products/
+  - title: Auto Products  
+    url: /auto-products/
+  - title: Comparisons
+    url: /comparisons/
   - title: About
     url: /about/
 
