@@ -363,3 +363,34 @@ footer {
   }
   
   .hero h1 {
+/* Fix centering issues */
+.category-card {
+  text-align: center;
+}
+
+.category-card h3 {
+  text-align: center;
+}
+
+.category-card p {
+  text-align: center;
+}
+
+.category-link {
+  display: inline-block;
+  text-align: center;
+}
+
+/* Center the comparison section properly */
+.featured-categories .category-card:last-child {
+  text-align: center;
+}
+
+/* Make sure all text in category cards is centered */
+.featured-categories {
+  text-align: center;
+}
+
+.featured-categories .category-card {
+  text-align: center;
+}
