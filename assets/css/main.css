@@ -399,3 +399,23 @@ footer {
     padding: 3rem 0;
   }
 }
+/* Fix logo alignment */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  flex-shrink: 0;
+  display: block;
+}
+
+/* Fix any text alignment issues in header */
+header {
+  text-align: left;
+}
+
+.header-content * {
+  text-align: left;
+}
