@@ -401,3 +401,43 @@ footer {
     width: calc(100% + 2rem);
   }
 }
+/* Page styling */
+.page-header {
+  text-align: center;
+  padding: 4rem 0 2rem 0;
+  margin-bottom: 3rem;
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.coming-soon, .about-content {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #fff;
+  border: 1px solid #f0f0f0;
+}
+
+.product-list, .testing-list {
+  margin: 2rem 0;
+  padding-left: 2rem;
+}
+
+.product-list li, .testing-list li {
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.back-link {
+  color: #1a1a1a;
+  text-decoration: none;
+  border-bottom: 1px solid #1a1a1a;
+  font-weight: normal;
+}
+
+.back-link:hover {
+  opacity: 0.7;
+}
