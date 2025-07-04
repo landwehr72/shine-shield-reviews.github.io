@@ -1,0 +1,155 @@
+---
+layout: default
+---
+
+<article class="review">
+    <div class="product-header">
+        <div class="product-info">
+            <h1>{{ page.title }}</h1>
+            <div class="product-meta">
+                <span class="meta-item">{{ page.category }}</span>
+                <span class="meta-item">{{ page.brand }}</span>
+                <span class="meta-item">${{ page.price }}</span>
+                <span class="meta-item">{{ page.date | date: "%B %Y" }}</span>
+            </div>
+            <p class="product-description">{{ page.excerpt }}</p>
+        </div>
+        
+        <div class="product-sidebar">
+            <div class="overall-rating">
+                <div class="rating-score">{{ page.rating }}</div>
+                <div class="rating-stars">
+                    {% assign stars = page.rating | round %}
+                    {% for i in (1..5) %}
+                        {% if i <= stars %}★{% else %}☆{% endif %}
+                    {% endfor %}
+                </div>
+                <div class="rating-text">Overall Score</div>
+            </div>
+            
+            {% if page.affiliate_link %}
+                <a href="{{ page.affiliate_link }}" class="btn btn-primary" target="_blank" rel="noopener">
+                    Buy Now - ${{ page.price }}
+                </a>
+                <p class="affiliate-disclaimer">*Affiliate link - we may earn a commission</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="review-content">
+        {{ content }}
+    </div>
+
+    {% if page.pros or page.cons %}
+    <div class="pros-cons">
+        {% if page.pros %}
+        <div class="pros">
+            <h3>✓ Pros</h3>
+            <ul>
+                {% for pro in page.pros %}
+                    <li>{{ pro }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        
+        {% if page.cons %}
+        <div class="cons">
+            <h3>✗ Cons</h3>
+            <ul>
+                {% for con in page.cons %}
+                    <li>{{ con }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    {% if page.specifications %}
+    <div class="specifications">
+        <h3>Specifications</h3>
+        <div class="spec-table">
+            {% for spec in page.specifications %}
+                <div class="spec-row">
+                    <span class="spec-label">{{ spec[0] }}:</span>
+                    <span class="spec-value">{{ spec[1] }}</span>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+</article>
+
+<style>
+.review {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.btn-primary {
+    background: #007bff;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.affiliate-disclaimer {
+    font-size: 0.8rem;
+    color: #666;
+    text-align: center;
+    font-style: italic;
+}
+
+.review-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+}
+
+.review-content h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+    font-size: 1.8rem;
+}
+
+.review-content h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    color: #333;
+    font-size: 1.4rem;
+}
+
+.specifications {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+}
+
+.spec-table {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.spec-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.spec-label {
+    font-weight: 600;
+    color: #333;
+}
+
+.spec-value {
+    color: #666;
+}
+</style>
