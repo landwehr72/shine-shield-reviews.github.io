@@ -155,6 +155,7 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 3rem;
   margin-bottom: 6rem;
+  text-align: center;
 }
 
 .category-card {
@@ -174,12 +175,22 @@ main {
   margin-bottom: 1.5rem;
   color: #1a1a1a;
   font-weight: normal;
+  text-align: center;
+}
+
+.category-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+  font-weight: normal;
+  text-align: center;
 }
 
 .category-card p {
   margin-bottom: 2rem;
   font-size: 1rem;
   line-height: 1.6;
+  text-align: center;
 }
 
 .category-link {
@@ -190,6 +201,7 @@ main {
   border-bottom: 1px solid #1a1a1a;
   padding-bottom: 2px;
   transition: opacity 0.3s;
+  display: inline-block;
 }
 
 .category-link:hover {
@@ -363,34 +375,27 @@ footer {
   }
   
   .hero h1 {
-/* Fix centering issues */
-.category-card {
-  text-align: center;
-}
-
-.category-card h3 {
-  text-align: center;
-}
-
-.category-card p {
-  text-align: center;
-}
-
-.category-link {
-  display: inline-block;
-  text-align: center;
-}
-
-/* Center the comparison section properly */
-.featured-categories .category-card:last-child {
-  text-align: center;
-}
-
-/* Make sure all text in category cards is centered */
-.featured-categories {
-  text-align: center;
-}
-
-.featured-categories .category-card {
-  text-align: center;
+    font-size: 2.5rem;
+  }
+  
+  .featured-categories {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  main {
+    padding: 0 1rem;
+  }
+  
+  .hero {
+    padding: 4rem 0;
+  }
+  
+  .intro-section {
+    padding: 3rem 0;
+  }
 }
