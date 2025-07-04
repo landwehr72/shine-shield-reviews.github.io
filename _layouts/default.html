@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta property="og:title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}">
+    <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ page.url | absolute_url }}">
+    <meta property="twitter:title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}">
+    <meta property="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="{{ '/' | relative_url }}" class="logo">{{ site.title }}</a>
+            <nav>
+                <ul>
+                    {% for nav_item in site.navigation %}
+                        <li><a href="{{ nav_item.url | relative_url }}">{{ nav_item.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {{ content }}
+    </main>
+
+    <footer>
+        <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+        <p>Honest reviews for boat and auto detailing enthusiasts.</p>
+    </footer>
+</body>
+</html>
