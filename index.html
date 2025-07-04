@@ -5,50 +5,41 @@ title: Home
 
 <div class="hero">
   <div class="hero-content">
-    <h1>Real Reviews from a Gearhead Who Actually Uses This Stuff</h1>
-    <p class="hero-subtitle">If it has wheels, a motor, or floats – I'm probably obsessing over how to make it look better. These are my honest takes on detailing products I've actually bought and tested.</p>
-    <div class="hero-stats">
-      <div class="stat">
-        <span class="stat-number">15+</span>
-        <span class="stat-label">Products Tested</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number">3</span>
-        <span class="stat-label">Years Detailing</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number">0</span>
-        <span class="stat-label">Sponsored Posts</span>
-      </div>
+    <h1>Shine & Shield Reviews</h1>
+    <p class="hero-subtitle">Honest detailing product reviews from real-world testing</p>
+  </div>
+</div>
+
+<div class="intro-section">
+  <div class="intro-content">
+    <h2>Real Products. Real Testing. Real Results.</h2>
+    <p>Every product featured on this site has been personally purchased and tested. No sponsored content, no affiliate bias – just honest reviews from someone who actually uses this stuff on boats and cars.</p>
+  </div>
+</div>
+
+<div class="featured-categories">
+  <div class="category-card">
+    <div class="category-header">
+      <h3>Marine Products</h3>
     </div>
+    <p>Boat wax, cleaners, and detailing products tested in real saltwater and freshwater conditions</p>
+    <a href="/marine-products/" class="category-link">View Reviews →</a>
   </div>
-</div>
-
-<div class="category-card">
-  <div class="product-image">
-    <span class="category-icon">MARINE</span>
-  </div>
-  <h3>Marine Products</h3>
-  <p>Boat wax, cleaners, and detailing products tested in real saltwater and freshwater conditions</p>
-  <a href="/marine-products/" class="btn">View Marine Reviews</a>
-</div>
-
-<div class="category-card">
-  <div class="product-image">
-  <span class="category-icon">AUTO</span>
-</div>
-  <h3>Auto Products</h3>
-  <p>Car wax, polish, and detailing products tested on daily drivers and weekend warriors</p>
-  <a href="/auto-products/" class="btn">View Auto Reviews</a>
-</div>
   
   <div class="category-card">
-    <div class="product-image">
-      <span class="category-icon">COMPARE</span>
+    <div class="category-header">
+      <h3>Auto Products</h3>
     </div>
-    <h3>Comparisons</h3>
-    <p>Side-by-side product comparisons to help you choose the best option</p>
-    <a href="/comparisons/" class="btn">View Comparisons</a>
+    <p>Car wax, polish, and detailing products tested on daily drivers and weekend warriors</p>
+    <a href="/auto-products/" class="category-link">View Reviews →</a>
+  </div>
+  
+  <div class="category-card">
+    <div class="category-header">
+      <h3>Comparisons</h3>
+    </div>
+    <p>Side-by-side product tests to help you choose the best option for your needs</p>
+    <a href="/comparisons/" class="category-link">View Reviews →</a>
   </div>
 </div>
 
@@ -57,20 +48,13 @@ title: Home
   <div class="posts-grid">
     {% for post in site.posts limit:6 %}
       <article class="post-card">
-        <div class="product-image">
-          {% if post.category contains "Boat" %}🚤{% else %}🚗{% endif %}
-        </div>
+        <div class="post-date">{{ post.date | date: "%m/%d/%y" }}</div>
         <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-        <p class="post-meta">{{ post.date | date: "%B %d, %Y" }} • {{ post.category }}</p>
-        <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
-        <div class="post-rating">
-          {% if post.rating %}
-            <span class="rating">★★★★★</span>
-            <span class="rating-number">{{ post.rating }}/5</span>
-          {% endif %}
-        </div>
-        {% if post.featured %}
-          <span class="badge featured">Featured Review</span>
+        <p>{{ post.excerpt | strip_html | truncate: 100 }}</p>
+        {% if post.rating %}
+          <div class="post-rating">
+            <span class="rating-text">Rating: {{ post.rating }}/5</span>
+          </div>
         {% endif %}
       </article>
     {% endfor %}
