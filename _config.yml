@@ -27,10 +27,12 @@ navigation:
     url: /
   - title: Boat Reviews
     url: /boat-reviews/
-  - title: Auto Reviews
+  - title: Auto Reviews  
     url: /auto-reviews/
-  - title: Comparisons
-    url: /comparisons/
+  - title: Best Products
+    url: /best-products/
+  - title: Buying Guides
+    url: /guides/
   - title: About
     url: /about/
 
