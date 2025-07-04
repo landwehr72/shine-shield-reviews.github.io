@@ -52,6 +52,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
+  text-align: left;
 }
 
 .header-content {
@@ -69,6 +70,8 @@ header {
   color: #1a1a1a;
   text-decoration: none;
   letter-spacing: 1px;
+  flex-shrink: 0;
+  display: block;
 }
 
 nav ul {
@@ -97,17 +100,19 @@ main {
   padding: 0 2rem;
 }
 
-/* Hero Section */
+/* Hero Section - Perfect Centering */
 .hero {
   text-align: center;
   padding: 6rem 0;
   background: #fff;
-  margin-bottom: 4rem;
+  margin: 0 -2rem 4rem -2rem;
+  width: calc(100% + 4rem);
 }
 
 .hero-content {
   max-width: 600px;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .hero h1 {
@@ -116,6 +121,7 @@ main {
   color: #1a1a1a;
   font-weight: 300;
   letter-spacing: -2px;
+  text-align: center;
 }
 
 .hero-subtitle {
@@ -123,19 +129,22 @@ main {
   color: #666;
   font-weight: normal;
   margin-bottom: 0;
+  text-align: center;
 }
 
 /* Intro Section */
 .intro-section {
   background: #fff;
   padding: 4rem 0;
-  margin-bottom: 4rem;
+  margin: 0 -2rem 4rem -2rem;
+  width: calc(100% + 4rem);
   text-align: center;
 }
 
 .intro-content {
   max-width: 700px;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .intro-section h2 {
@@ -168,14 +177,6 @@ main {
 
 .category-card:hover {
   transform: translateY(-5px);
-}
-
-.category-header h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  color: #1a1a1a;
-  font-weight: normal;
-  text-align: center;
 }
 
 .category-card h3 {
@@ -392,62 +393,12 @@ footer {
   }
   
   .hero {
-    padding: 4rem 0;
+    margin: 0 -1rem 4rem -1rem;
+    width: calc(100% + 2rem);
   }
   
   .intro-section {
-    padding: 3rem 0;
+    margin: 0 -1rem 4rem -1rem;
+    width: calc(100% + 2rem);
   }
-}
-/* Fix logo alignment */
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  flex-shrink: 0;
-  display: block;
-}
-
-/* Fix any text alignment issues in header */
-header {
-  text-align: left;
-}
-
-.header-content * {
-  text-align: left;
-}
-/* Fix hero title centering */
-.hero {
-  text-align: center;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.hero-content {
-  max-width: 600px;
-  margin: 0 auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-.hero h1 {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Override any main container padding for hero section */
-main {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-.hero {
-  margin-left: -2rem;
-  margin-right: -2rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
