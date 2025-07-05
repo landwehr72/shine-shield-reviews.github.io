@@ -1,8 +1,8 @@
 # Site Settings
 title: "Salt Life Detail"
 description: "Honest boat and auto detailing product reviews from Florida's coast"
-baseurl: "/salt-life-detail"  # ← UPDATE THIS
-url: "https://landwehr72.github.io"
+baseurl: ""  # ← UPDATE THIS
+url: "https://saltlifedetail.com"
 author: "Salt Life Detail"  # ← UPDATE THIS TOO
 
 # Rest of your config stays the same...
