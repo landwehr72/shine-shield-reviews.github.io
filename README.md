@@ -1,1 +1,1 @@
-# shine-shield-reviews.github.io
+# salt.life.detail.io
